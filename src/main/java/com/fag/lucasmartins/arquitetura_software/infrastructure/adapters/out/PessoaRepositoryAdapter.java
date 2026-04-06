@@ -28,9 +28,8 @@ public class PessoaRepositoryAdapter implements PessoaRepositoryPort {
                 PreparedStatement ps = con.prepareStatement(sql);
                 ps.setString(1, pessoa.getId().toString());
                 ps.setString(2, pessoa.getNomeCompleto());
-                ps.setDate(3, java.sql.Date.valueOf(pessoa.getDataNascimento()));
                 ps.setString(3, pessoa.getCpf());
-
+                ps.setDate(4, java.sql.Date.valueOf(pessoa.getDataNascimento()));
                 ps.setString(5, pessoa.getEmail());
                 ps.setString(6, pessoa.getTelefone());
                 return ps;

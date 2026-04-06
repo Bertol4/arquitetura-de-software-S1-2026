@@ -12,7 +12,7 @@ public class Pessoa {
     private final String telefone;
 
     public Pessoa(String nomeCompleto, String cpf, LocalDate dataNascimento, String email, String telefone) {
-        this(UUID.randomUUID(), nomeCompleto, cpf, dataNascimento, email, telefone);
+        this(UUID.randomUUID(), nomeCompleto, cpf == null ? null : cpf.replaceAll("[.\\-]", ""), dataNascimento, email, telefone);
     }
 
     private Pessoa(UUID id, String nomeCompleto, String cpf, LocalDate dataNascimento, String email, String telefone) {
