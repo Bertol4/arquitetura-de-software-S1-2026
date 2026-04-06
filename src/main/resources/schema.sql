@@ -7,10 +7,10 @@ CREATE TABLE produto (
 );
 
 CREATE TABLE pessoa (
-    id VARCHAR(36) PRIMARY KEY,
-    nome_completo VARCHAR(255) NOT NULL,
-    cpf VARCHAR(11) NOT NULL,
-    data_nascimento DATE NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    telefone VARCHAR(11) NOT NULL
+  id VARCHAR(36) PRIMARY KEY,
+  nome_completo VARCHAR(255) NOT NULL,
+  cpf VARCHAR(11) NOT NULL,
+  data_nascimento DATE NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  telefone VARCHAR(11) NOT NULL
 );

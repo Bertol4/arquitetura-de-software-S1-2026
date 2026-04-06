@@ -22,16 +22,24 @@ public class PessoaRepositoryAdapter implements PessoaRepositoryPort {
     @Override
     public Pessoa save(Pessoa pessoa) {
         String sql = "INSERT INTO pessoa (id, nome_completo, cpf, data_nascimento, email, telefone) VALUES (?, ?, ?, ?, ?, ?)";
-        jdbcTemplate.update(con -> {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, pessoa.getId().toString());
-            ps.setString(2, pessoa.getNomeCompleto());
-            ps.setDate(3, java.sql.Date.valueOf(pessoa.getDataNascimento()));
-            ps.setString(4, pessoa.getCpf());
-            ps.setString(5, pessoa.getEmail());
-            ps.setString(6, pessoa.getTelefone());
-            return ps;
-        });
+        System.out.println("Saving pessoa: " + pessoa.getId() + ", " + pessoa.getNomeCompleto());
+        try {
+            jdbcTemplate.update(con -> {
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setString(1, pessoa.getId().toString());
+                ps.setString(2, pessoa.getNomeCompleto());
+                ps.setDate(3, java.sql.Date.valueOf(pessoa.getDataNascimento()));
+                ps.setString(3, pessoa.getCpf());
+
+                ps.setString(5, pessoa.getEmail());
+                ps.setString(6, pessoa.getTelefone());
+                return ps;
+            });
+        } catch (Exception e) {
+            System.out.println("Erro SQL: " + e.getMessage());
+            throw new RuntimeException("Erro ao salvar pessoa: " + e.getMessage(), e);
+        }
         return pessoa;
     }
+
 }

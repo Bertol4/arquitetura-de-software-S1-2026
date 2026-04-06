@@ -7,7 +7,10 @@
 - [x] 3. Create application ports (PessoaUseCasePort, PessoaRepositoryPort) & service
 - [x] 4. Create infrastructure adapters (ControllerAdapter, RepositoryAdapter)
 - [x] 5. Create infrastructure entity (PessoaEntity)
+
 - [x] 6. Update schema.sql (add pessoa table)
+- [x] 7. Test & validate (success/error cases) - 400 validação OK
+
 - [x] 7. Test & validate (success/error cases)
 - [x] 8. Git commit to feature/hexagonal branch
 

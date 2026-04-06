@@ -14,6 +14,7 @@ public class PessoaService implements PessoaUseCasePort {
 
     public PessoaService(PessoaRepositoryPort pessoaRepositoryPort) {
         this.pessoaRepositoryPort = pessoaRepositoryPort;
+        System.out.println("PessoaService created with repository: " + (pessoaRepositoryPort != null));
     }
 
     @Override
